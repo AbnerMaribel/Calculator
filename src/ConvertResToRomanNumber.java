@@ -2,13 +2,12 @@ public class ConvertResToRomanNumber
 {
     public static void conv(int res)
     {
-        //
         int div = res / 10;
         int remain = res % 10;
 
         //если цифра стандартная
         if((div == 0) || (remain == 0))
-            //в методе standart выводим стандартные цифрв
+            //в методе standart выводим стандартные цифры
             standart(res);
 
             //если нестандартная
@@ -25,6 +24,8 @@ public class ConvertResToRomanNumber
     //стандартные римские цифры
     public static void standart(int num)
     {
+        if (num == 0)
+            System.out.print( "0");
         if (num == 1)
             System.out.print( "I");
         if (num == 2)

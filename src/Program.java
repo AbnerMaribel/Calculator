@@ -25,7 +25,8 @@ public class Program
             char c = number[1].charAt(0);
 
             //проверяем, введены ли римские цифры
-            if (number[0].contains("I") || number[0].contains("V") || number[0].contains("X")) {
+            if (number[0].contains("I") || number[0].contains("V") || number[0].contains("X"))
+            {
                 //превращаем римские цифры в арабские для обоих чисел (от 1 до 10)
                 if (number[0].equals("I"))
                     num1 = 1;
@@ -71,9 +72,17 @@ public class Program
 
                 //проверяем число и вычисляем результат в классе Math методом math
                 int res = Math.math(c, num1, num2);
+                //если результат отрицательный, выводим сначала минус
+                if (res < 0) {
+                    System.out.print("-");
+                    res = res * (-1);
+                    ConvertResToRomanNumber.conv(res);
+                }
                 //полученный результат (int) переводим в римскую
                 //цифру и выводим с помощью класса Convert.... и метода conv
-                ConvertResToRomanNumber.conv(res);
+                else {
+                    ConvertResToRomanNumber.conv(res);
+                }
             }
             //если введены не римские цифры, значит арабские
             else {
